@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block booksList %}
+    <section class="main">
+        <div class="col-lg-3">
+            <div class="list-group">
+                {% for category in categories %}
+                    <a href="{% url 'categories' pk=category.pk %}" class="list-group-item">{{ category }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-9">
+            {% for book in books %}
+                <p class="book-title">{{ book }}</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
